@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TruthCheck AI | Results</title>
+</head>
+
+<body style="margin:0; font-family:Arial, Helvetica, sans-serif; background:#f0fdf4; color:#0f172a;">
+
+    <!-- Header -->
+    <div style="background:#173838; color:white; padding:20px 60px; display:flex; justify-content:space-between;">
+        <h2 style="margin:0;">TruthCheck AI</h2>
+        <a href="home.html" style="color:white; text-decoration:none;">Home</a>
+    </div>
+
+    <!-- Result Section -->
+    <div style="padding:60px; max-width:800px; margin:auto;">
+        <h2 style="margin-bottom:20px;">Analysis Result</h2>
+
+        <div style="background:white; padding:30px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+
+            <p><strong>Hallucination Status:</strong>
+                <span id="hallucination">Checking...</span>
+            </p>
+
+            <p><strong>Citation Verification:</strong>
+                <span id="citation">Checking...</span>
+            </p>
+
+            <p><strong>Confidence Score:</strong>
+                <span id="confidence">Checking...</span>
+            </p>
+
+        </div>
+    </div>
+
+    <!-- Script with PORT -->
+    <script>
+        // Sending request to backend running on PORT 3000
+        fetch("http://localhost:3000/analyze", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                text: "Sample AI generated response for verification"
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("hallucination").innerText = data.hallucinationScore;
+            document.getElementById("citation").innerText = data.citationStatus;
+            document.getElementById("confidence").innerText = data.confidence;
+        })
+        .catch(error => {
+            console.error("Error:", error);
+        });
+    </script>
+
+</body>
+</html>
