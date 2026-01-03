@@ -6,7 +6,7 @@
     <meta charset="UTF-8" >
     <title>TruthCheck AI - Analyze</title>
 </head>
-<body style="margin:0; font-family:Arial, Helvetica, sans-serif; background:#e6f5e6; color:#0f172a;">
+<body style="margin:0; font-family:Arial, Helvetica, sans-serif; background:#cceedf; color:#101217;">
 
     <!-- Header -->
     <div style="background:#064e3b; color:white; padding:25px 35px; display:flex; justify-content:space-between; align-items:center;">
@@ -65,7 +65,7 @@
 
     <!-- Hero Section -->
     <div style="padding:60px 20px; text-align:center;">
-        <h2 style="font-size:36px; color:#064e3b;">Analyze AI-generated Text</h2>
+        <h2 style="font-size:36px; color:#065e46;">Analyze AI-generated Text</h2>
         <p style="font-size:16px; max-width:700px; margin:0 auto 30px; line-height:1.6;">
             Paste AI-generated content below and check for hallucinations, fake citations, and factual accuracy.
         </p>
@@ -76,7 +76,7 @@
     
     <!-- Textarea -->
     <textarea id="aiText" placeholder="Paste AI-generated text here..."
-              style="width:90%; max-width:800px; height:250px; padding:15px; font-size:16px; border:2px solid #10b981; border-radius:8px; resize:none;"
+              style="width:90%; max-width:800px; height:250px; padding:15px; font-size:16px; border:2px solid #388a6f; border-radius:8px; resize:none;"
               oninput="
                 let words = this.value.trim().split(/\s+/);
                 if(words.length > 1250){
@@ -88,13 +88,13 @@
 
     <!-- File Upload -->
     <input type="file" id="fileInput" accept=".pdf,image/*"
-           style="margin-top:15px; padding:8px; font-size:14px; border:2px solid #10b981; border-radius:6px; cursor:pointer; width:90%; max-width:800px;" />
+           style="margin-top:15px; padding:8px; font-size:14px; border:2px solid #388a6f; border-radius:6px; cursor:pointer; width:90%; max-width:800px;" />
 
     <!-- Analyze Button -->
     <button id="analyzeBtn"
-            style="margin-top:20px; padding:14px 28px; font-size:30px; background:#10b981; color:white; border:none; border-radius:6px; cursor:pointer; transition:all 0.2s;"
-            onmouseover="this.style.background='#059669'; this.style.transform='scale(1.05)';"
-            onmouseout="this.style.background='#10b981'; this.style.transform='scale(1)';">
+            style="margin-top:20px; padding:14px 28px; font-size:30px; background:#18f5e2; color:rgb(255, 255, 255); border:none; border-radius:6px; cursor:pointer; transition:all 0.2s;"
+            onmouseover="this.style.background='#13e1d0'; this.style.transform='scale(1.05)';"
+            onmouseout="this.style.background='#01ffea'; this.style.transform='scale(1)';">
         Analyze
     </button>
     </div>
