@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" >
+    <title>TruthCheck AI - Analyze</title>
+</head>
+<body style="margin:0; font-family:Arial, Helvetica, sans-serif; background:#e6f5e6; color:#0f172a;">
+
+    <!-- Header -->
+    <div style="background:#064e3b; color:white; padding:25px 35px; display:flex; justify-content:space-between; align-items:center;">
+        <h1 style="margin:0; font-size:22px;">TruthCheck AI</h1>
+        <div>
+    <a href="home.html" style="color:white; margin-left:15px; text-decoration:none; border:2px solid white; font-size:20px; padding:8px 15px; border-radius:8px; display:inline-block; transition:all 0.25s ease;"
+       onmouseover="
+           this.style.color='#064e3b';
+           this.style.background='white';
+           this.style.transform='scale(1.08)';
+           this.style.boxShadow='0 6px 15px rgba(0,0,0,0.2)';
+       "
+       onmouseout="
+           this.style.color='white';
+           this.style.background='transparent';
+           this.style.transform='scale(1)';
+           this.style.boxShadow='none';
+       ">
+       Home
+    </a>
+
+    <a href="analyze.html" style="color:white; margin-left:15px; text-decoration:none; border:2px solid white; font-size:20px; padding:8px 15px; border-radius:8px; display:inline-block; transition:all 0.25s ease;"
+       onmouseover="
+           this.style.color='#064e3b';
+           this.style.background='white';
+           this.style.transform='scale(1.08)';
+           this.style.boxShadow='0 6px 15px rgba(0,0,0,0.2)';
+       "
+       onmouseout="
+           this.style.color='white';
+           this.style.background='transparent';
+           this.style.transform='scale(1)';
+           this.style.boxShadow='none';
+       ">
+       Analyze
+    </a>
+
+    <a href="about.html" style="color:white; margin-left:15px; text-decoration:none; border:2px solid white; font-size:20px; padding:8px 15px; border-radius:8px; display:inline-block; transition:all 0.25s ease;"
+       onmouseover="
+           this.style.color='#064e3b';
+           this.style.background='white';
+           this.style.transform='scale(1.08)';
+           this.style.boxShadow='0 6px 15px rgba(0,0,0,0.2)';
+       "
+       onmouseout="
+           this.style.color='white';
+           this.style.background='transparent';
+           this.style.transform='scale(1)';
+           this.style.boxShadow='none';
+       ">
+       About
+    </a>
+</div>
+
+    </div>
+
+    <!-- Hero Section -->
+    <div style="padding:60px 20px; text-align:center;">
+        <h2 style="font-size:36px; color:#064e3b;">Analyze AI-generated Text</h2>
+        <p style="font-size:16px; max-width:700px; margin:0 auto 30px; line-height:1.6;">
+            Paste AI-generated content below and check for hallucinations, fake citations, and factual accuracy.
+        </p>
+    </div>
+
+    <!-- Textarea and Analyze Button with File Upload -->
+    <div style="display:flex; flex-direction:column; align-items:center; padding:0 20px 60px;">
+    
+    <!-- Textarea -->
+    <textarea id="aiText" placeholder="Paste AI-generated text here..."
+              style="width:90%; max-width:800px; height:250px; padding:15px; font-size:16px; border:2px solid #10b981; border-radius:8px; resize:none;"
+              oninput="
+                let words = this.value.trim().split(/\s+/);
+                if(words.length > 1250){
+                    this.value = words.slice(0,1250).join(' ');
+                    alert('Word limit reached: 1250 words max.');
+                }
+              ">
+    </textarea>
+
+    <!-- File Upload -->
+    <input type="file" id="fileInput" accept=".pdf,image/*"
+           style="margin-top:15px; padding:8px; font-size:14px; border:2px solid #10b981; border-radius:6px; cursor:pointer; width:90%; max-width:800px;" />
+
+    <!-- Analyze Button -->
+    <button id="analyzeBtn"
+            style="margin-top:20px; padding:14px 28px; font-size:30px; background:#10b981; color:white; border:none; border-radius:6px; cursor:pointer; transition:all 0.2s;"
+            onmouseover="this.style.background='#059669'; this.style.transform='scale(1.05)';"
+            onmouseout="this.style.background='#10b981'; this.style.transform='scale(1)';">
+        Analyze
+    </button>
+    </div>
+
+    <!-- Link JS -->
+    <script src="main.js"></script>
+
+</body>
+</html>
