@@ -10,7 +10,7 @@
     <div style=" display:flex; align-items:center; padding: 20px 20px;">
         <!-- Back Button -->
         <button
-            onclick="history.back()"
+            id="backbutton"
             style="
                 /* display:inline-flex; */
                 align-items:center;
@@ -41,7 +41,7 @@
 
     <!-- Sign In Container -->
     <div style="
-        min-height: 750px;
+        min-height: 550px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -67,8 +67,8 @@
             ">Sign In</h1>
 
             <!-- Form -->
-            <form style="display: flex; flex-direction: column; gap: 16px; align-items: center;">
-                <input type="text" placeholder="Enter your email"
+            <form id="signinform" style="display: flex; flex-direction: column; gap: 16px; align-items: center;">
+                <input id="email" type="email" placeholder="Enter your email"
                        style="
                            width: 90%;
                            padding: 14px 16px;
@@ -82,7 +82,7 @@
                        "
                        onfocus="this.style.borderColor='#059669'; this.style.background='white'; this.style.boxShadow='0 0 12px rgba(16,185,129,0.25)';">
 
-                <input type="password" placeholder="Enter your password"
+                <input id="password" type="password" placeholder="Enter your password"
                        style="
                            width: 90%;
                            padding: 14px 16px;
@@ -96,7 +96,7 @@
                        "
                        onfocus="this.style.borderColor='#059669'; this.style.background='white'; this.style.boxShadow='0 0 12px rgba(16,185,129,0.25)';">
 
-                <a href="#" style="
+                <a id="ForgotPassword" href="#" style="
                     font-size: 14px;
                     color: #059669;
                     text-decoration: none;
@@ -107,8 +107,9 @@
                     Forgot password?
                 </a>
 
-                <button type="submit" style="
+                <button id="signinbutton" type="submit" style="
                     margin-top: 10px;
+                    margin-bottom: 15px;
                     padding: 14px;
                     font-size: 16px;
                     font-weight: 600;
@@ -118,25 +119,19 @@
                     background: linear-gradient(135deg, #10b981, #059669);
                     color: white;
                     cursor: pointer;
-                    transition: all 0.25s ease;
-                "
+                    transition: all 0.25s ease;"
                         onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 25px rgba(16,185,129,0.45)';"
                         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 18px rgba(16,185,129,0.25)';">
                     Sign In
                 </button>
-
-                <a href="signup.html" style="
-                    font-size: 14px;
-                    color: #059669;
-                    text-decoration: none;
-                "
-                   onmouseover="this.style.textDecoration='underline';"
-                   onmouseout="this.style.textDecoration='none';">
-                    Don't have an account? Sign Up
-                </a>
             </form>
+            <a id="signup" href="signup.html" style="font-size: 14px; color: #059669; text-decoration: none;"
+                onmouseover="this.style.textDecoration='underline';"
+                onmouseout="this.style.textDecoration='none';">
+                Don't have an account? Sign Up
+            </a>
         </div>
     </div>
-
+    <script src="main.js" defer></script>
 </body>
 </html>

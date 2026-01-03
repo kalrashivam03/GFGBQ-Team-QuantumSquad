@@ -7,55 +7,160 @@
 
 <body style="margin:0; font-family:Arial, Helvetica, sans-serif; background:#f0fdf4; color:#0f172a;">
 
-    <!-- Header -->
-    <div style="background:#173838; color:white; padding:20px 60px; display:flex; justify-content:space-between;">
-        <h2 style="margin:0;">TruthCheck AI</h2>
-        <a href="home.html" style="color:white; text-decoration:none;">Home</a>
+        <!-- Header -->
+    <div style="background:#064e3b; color:white; padding:25px 35px; display:flex; justify-content:space-between; align-items:center;">
+
+    <!-- Left: Logo + Name -->
+    <div style="
+    display:flex;
+    align-items:center;
+    gap:18px;
+    ">
+    <!-- Back Button -->
+    <button
+        id="backbutton"
+        style="
+            display:inline-flex;
+            align-items:center;
+            gap:6px;
+            background:#064e3b;
+            color:white;
+            border:2px solid white;
+            padding:6px 12px;
+            border-radius:8px;
+            font-size:15px;
+            cursor:pointer;
+            transition:all 0.25s ease;
+        "
+        onmouseover="
+            this.style.background='white';
+            this.style.color='#064e3b';
+            this.style.transform='scale(1.08)';
+            this.style.boxShadow='0 6px 15px rgba(0,0,0,0.2)';
+        "
+        onmouseout="
+            this.style.background='#064e3b';
+            this.style.color='white';
+            this.style.transform='scale(1)';
+            this.style.boxShadow='none';
+        ">
+        ⬅ Back
+    </button>
+
+    <!-- Logo + Name -->
+        <img src="secure-ai.webp"
+             alt="TruthCheck AI Logo"
+             style="
+                 height:48px;
+                 width:48px;
+                 border-radius:50%;
+                 object-fit:cover;
+             ">
+        <h1 style="
+            margin:0;
+            font-size:22px;
+            font-weight:600;
+            white-space:nowrap;
+        ">
+            TruthCheck AI
+        </h1>
     </div>
 
+    <!-- Right: Navigation -->
+    <div>
+        <a id="nav-signin" href="signin.html"
+           style="color:white; margin-left:15px; text-decoration:none; border:2px solid white; font-size:20px; padding:8px 15px; border-radius:8px; display:inline-block; transition:all 0.25s ease;"
+           onmouseover="
+               this.style.color='#064e3b';
+               this.style.background='white';
+               this.style.transform='scale(1.08)';
+               this.style.boxShadow='0 6px 15px rgba(0,0,0,0.2)';
+           "
+           onmouseout="
+               this.style.color='white';
+               this.style.background='transparent';
+               this.style.transform='scale(1)';
+               this.style.boxShadow='none';
+           ">
+           signin
+        </a>
+
+        <a id="nav-signup" href="signup.html"
+           style="color:white; margin-left:15px; text-decoration:none; border:2px solid white; font-size:20px; padding:8px 15px; border-radius:8px; display:inline-block; transition:all 0.25s ease;"
+           onmouseover="
+               this.style.color='#064e3b';
+               this.style.background='white';
+               this.style.transform='scale(1.08)';
+               this.style.boxShadow='0 6px 15px rgba(0,0,0,0.2)';
+           "
+           onmouseout="
+               this.style.color='white';
+               this.style.background='transparent';
+               this.style.transform='scale(1)';
+               this.style.boxShadow='none';
+           ">
+           signup
+        </a>
+
+        <a id="nav-about" href="about.html"
+           style="color:white; margin-left:15px; text-decoration:none; border:2px solid white; font-size:20px; padding:8px 15px; border-radius:8px; display:inline-block; transition:all 0.25s ease;"
+           onmouseover="
+               this.style.color='#064e3b';
+               this.style.background='white';
+               this.style.transform='scale(1.08)';
+               this.style.boxShadow='0 6px 15px rgba(0,0,0,0.2)';"
+           onmouseout="
+               this.style.color='white';
+               this.style.background='transparent';
+               this.style.transform='scale(1)';
+               this.style.boxShadow='none';">
+           About
+        </a>
+    </div>
+
+</div>
+
     <!-- Result Section -->
-    <div style="padding:60px; max-width:800px; margin:auto;">
-        <h2 style="margin-bottom:20px;">Analysis Result</h2>
+    <div style="padding:70px; max-width:800px; margin:auto;">
+        <h2 id="resultLabel" style="margin-bottom:20px; font-size: 50px;">Analysis Result</h2>
 
-        <div style="background:white; padding:30px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        <div style="background:white; padding:50px; height: 200px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
 
-            <p><strong>Hallucination Status:</strong>
-                <span id="hallucination">Checking...</span>
+            <p style="height: 50px;" ><strong>Hallucination Status:</strong>
+                <span id="hallucinationScore">Checking...</span>
             </p>
 
-            <p><strong>Citation Verification:</strong>
-                <span id="citation">Checking...</span>
+            <p style="height: 50px;" ><strong>Citation Verification:</strong>
+                <span id="citationScore">Checking...</span>
             </p>
 
-            <p><strong>Confidence Score:</strong>
-                <span id="confidence">Checking...</span>
+            <p style="height: 50px;" ><strong>Confidence Score:</strong>
+                <span id="confidenceScore">Checking...</span>
             </p>
 
         </div>
     </div>
-
-    <!-- Script with PORT -->
+    
     <script>
-        // Sending request to backend running on PORT 3000
-        fetch("http://localhost:3000/analyze", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                text: "Sample AI generated response for verification"
-            })
-        })
-        .then(response => response.json())
-        .then(data => {
-            document.getElementById("hallucination").innerText = data.hallucinationScore;
-            document.getElementById("citation").innerText = data.citationStatus;
-            document.getElementById("confidence").innerText = data.confidence;
-        })
-        .catch(error => {
-            console.error("Error:", error);
-        });
-    </script>
+    document.addEventListener("DOMContentLoaded", () => {
+    if (window.location.pathname.includes("result.html")) {
+        const result = JSON.parse(localStorage.getItem("analysisResult") || "null");
 
+        if (!result) {
+            alert("No analysis found. Please analyze some text first.");
+            window.location.href = "analyze.html"; // redirect back to analyze page
+        } else {
+            document.getElementById("hallucinationScore").innerText =
+                result.aiGenerated ? "Detected" : "Not Detected";
+
+            document.getElementById("citationScore").innerText =
+                result.citation || "Verified";
+
+            document.getElementById("confidenceScore").innerText =
+                `${result.confidence}%`;
+        }
+    }
+    });
+    </script>
 </body>
 </html>
