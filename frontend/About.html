@@ -3,32 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
+    <title>About | TruthbyAI</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        body {
+            background-color: #cceedf;
+            min-height: 100vh;
+        }
+
+        /* HEADER */
+        header {
+            background-color: #064e3b;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        header h1 {
+            font-size: 32px;
+            font-weight: 900;
+        }
+
+        .tagline {
+            font-size: 18px;
+            font-weight: 600;
+            margin-left: auto;
+        }
+
+        .logo {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* BACK BUTTON */
+        #backbutton {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #064e3b;
+            color: white;
+            border: 2px solid white;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        #backbutton:hover {
+            background: white;
+            color: #064e3b;
+            transform: scale(1.08);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+
+        /* MAIN CONTENT */
+        main {
+            padding: 30px 50px;
+            color: #27302f;
+        }
+
+        main h2 {
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 25px;
+        }
+
+        ol {
+            font-size: 18px;
+            line-height: 38px;
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            header {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .tagline {
+                margin-left: 0;
+                width: 100%;
+            }
+
+            main {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
-<body style="margin: 0%;padding: 0%;background-color: #cceedf;height: 100vh;">
-    <div style="height: 100%;width: 100%;" id="main">
-        <div style="background-color: #064e3b;height: 16%;width: 100%; margin: 0%;padding: 0%;display:flex;" id="header">
-            <h1 style="background-color: #064e3b;margin: 0%;padding: 25px;color: white;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: xx-large;font-weight: 900px;">TruthbyAi</h1>
-            <div style="height: 80px;width: 80px;border-radius: 50%;overflow: hidden;display: flex;align-items: center;justify-content: center;margin-top: 5px;margin-left: 5px" id="circle">
-                <img style="object-fit: cover;" src="https://media.licdn.com/dms/image/sync/v2/D5627AQG9-avGDBnGAw/articleshare-shrink_800/B56ZoGdwNbJQAI-/0/1761045054886?e=2147483647&v=beta&t=TlpU_D2ThTvHni6galiIBN9u5nN91qgyeQnp1uTMZG8" height="100" width="100">
-            </div>
-            <div style="color:white;margin-left:150px;margin-top:15px;" id="tagline"><h2>Ensuring Trust in AI Generated Information.</h2></div>
-        </div>
-        <div style="width: 100%;height: 10%;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: large;font-weight:600;display:flex;align-items:center;justify-content:center;margin-top: 10px;color:rgb(39, 48, 47)" id="heading"><h1>About This:</h1>
-        </div>
-        <ol style="margin-left:50px;font-size:20px;line-height:45px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">
-            <li>TruthbyAI verifies AI responses by checking them with reliable sources and highlights whether the information is Authentic, Partially True, or Incorrect.</li>
-            <li>Working - In this system, user enters the text or an image then our system checks the information by comparing it with trusted databases and fact-checking resources then displays the result. So by using this application we can ensure the accuracy of AI-generated information.</li>
-            <li>We had used Java for backend development,HTML and CSS for frontend development and GitHub for version control.</li>
-            <li>Team Members:
-                <ul>
-                    <li>Shivam Kalra:Team leader & Backend developer</li>
-                    <li>Sajag Mishra:Frontend developer</li>
-                    <li>Ananya Vatsa:Designer</li>
-                    <li>Tanishq Kalra:Frontend developer</li>
-                </ul>
-            </li>
-        </ol>
+
+<body>
+
+<header>
+    <button id="backbutton" onclick="history.back()">⬅ Back</button>
+
+    <div class="logo">
+        <img src="https://media.licdn.com/dms/image/sync/v2/D5627AQG9-avGDBnGAw/articleshare-shrink_800/B56ZoGdwNbJQAI-/0/1761045054886?e=2147483647&v=beta&t=TlpU_D2ThTvHni6galiIBN9u5nN91qgyeQnp1uTMZG8">
     </div>
+
+    <h1>TruthbyAI</h1>
+
+    <div class="tagline">Ensuring Trust in AI Generated Information.</div>
+</header>
+
+<main>
+    <h2>About This</h2>
+
+    <ol>
+        <li>
+            TruthbyAI verifies AI responses by checking them with reliable sources and highlights whether the information is <b>Authentic</b>, <b>Partially True</b>, or <b>Incorrect</b>.
+        </li>
+
+        <li>
+            <b>Working:</b> Users can input text or images. The system compares the content with trusted databases and fact-checking resources to ensure the accuracy of AI-generated information.
+        </li>
+
+        <li>
+            Technologies used include <b>Java</b> for backend, <b>HTML & CSS</b> for frontend, and <b>GitHub</b> for version control.
+        </li>
+
+        <li>
+            <b>Team Members:</b>
+            <ul>
+                <li>Shivam Kalra — Team Leader & Backend Developer</li>
+                <li>Sajag Mishra — Frontend Developer</li>
+                <li>Ananya Vatsa — Designer</li>
+                <li>Tanishq Kalra — Frontend Developer</li>
+            </ul>
+        </li>
+    </ol>
+</main>
+
 </body>
-</html>        
+</html>
