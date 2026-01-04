@@ -125,8 +125,9 @@
 
     <!-- Hero Section -->
     <div style="padding:60px 20px; text-align:center;">
-        <h2 style="font-size:36px; color:#065e46;">Analyze AI-generated Text</h2>
-        <p style="font-size:16px; max-width:700px; margin:0 auto 30px; line-height:1.6;">
+        <h2 style="font-size:36px; color:#065e46;">
+            Analyze AI-generated Text</h2>
+        <p style="font-size:16px; max-width:700px; margin:0 auto 30px; line-height:1.6; color:#064e3b;">
             Paste AI-generated content below and check for hallucinations, fake citations, and factual accuracy.
         </p>
     </div>
@@ -138,26 +139,59 @@
     <form id="textForm">
         <textarea id="textInput"
             placeholder="Paste AI-generated text here..."
-            style="width:90%; max-width:800px; height:250px; padding:15px; font-size:16px; border:2px solid #388a6f; border-radius:8px; resize:none;"
-            oninput="
-                let words = this.value.trim().split(/\s+/);
-                if(words.length > 1250){
-                    this.value = words.slice(0,1250).join(' ');
-                    alert('Word limit reached: 1250 words max.');
-                }
-            ">
+            style="
+                width:90%;
+                max-width:800px;
+                height:250px;
+                padding:15px;
+                font-size:16px;
+                border:2px solid #388a6f;
+                border-radius:8px;
+                resize:none;
+                background:#e6f5e6;
+                color:#064e3b;
+                outline:none;">
         </textarea>
         <!-- File Upload -->
         <input type="file" id="fileInput" accept=".pdf,image/*"
-            style="margin-top:15px; padding:8px; font-size:14px; border:2px solid #388a6f; border-radius:6px; cursor:pointer; width:90%; max-width:800px;" />
+            style="
+                margin-top:15px;
+                padding:10px;
+                font-size:14px;
+                border:2px solid #388a6f;
+                border-radius:6px;
+                cursor:pointer;
+                width:90%;
+                max-width:800px;
+                background:#e6f5e6;
+                color:#064e3b;" />
 
         <!-- Analyze Button -->
-        <button type="submit" id="analyzeBtn" onclick="location.href='result.html'"
-            style="margin-top:20px; padding:14px 28px; font-size:30px; background:#18f5e2; color:white; border:none; border-radius:6px; cursor:pointer; transition:all 0.2s;"
-            onmouseover="this.style.background='#13e1d0'; this.style.transform='scale(1.05)';"
-            onmouseout="this.style.background='#01ffea'; this.style.transform='scale(1)';">
+        <button type="submit" id="analyzeBtn"
+            style="
+                margin-top:20px;
+                padding:14px 32px;
+                font-size:22px;
+                background:#5edb65;
+                color:#064e3b;
+                border:none;
+                border-radius:6px;
+                cursor:pointer;
+                transition:all 0.25s ease;
+                font-weight:600;"
+            onmouseover="
+                this.style.background='#4fd85a';
+                this.style.transform='scale(1.05)';
+                this.style.boxShadow='0 6px 15px rgba(0,0,0,0.15)';
+            "
+            onmouseout="
+                this.style.background='#5edb65';
+                this.style.transform='scale(1)';
+                this.style.boxShadow='none';
+            ">
             Analyze
         </button>
+
     </form>
     <script src="main.js" defer></script>
 </body>
