@@ -1,162 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | TruthbyAI</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | TruthCheck AI</title>
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+      }
 
-        body {
-            background-color: #cceedf;
-            min-height: 100vh;
-        }
+      body {
+        background-color: #cceedf;
+        min-height: 100vh;
+      }
 
-        /* HEADER */
+      header {
+        background-color: #064e3b;
+        color: white;
+        display: flex;
+        align-items: center;
+        padding: 15px 20px;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+
+      header h1 {
+        font-size: 32px;
+        font-weight: 900;
+        color: white;
+      }
+
+      .tagline {
+        font-size: 18px;
+        font-weight: 600;
+        margin-left: auto;
+        color: white;
+      }
+
+      .logo {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+
+      .logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      #backbutton {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: #064e3b;
+        color: white;
+        border: 2px solid white;
+        padding: 6px 12px;
+        border-radius: 8px;
+        font-size: 15px;
+        cursor: pointer;
+        transition: all 0.25s ease;
+      }
+
+      #backbutton:hover {
+        background: white;
+        color: #064e3b;
+        transform: scale(1.08);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      main {
+        padding: 30px 50px;
+        color: #27302f;
+      }
+
+      main h2 {
+        text-align: center;
+        font-size: 30px;
+        margin-bottom: 25px;
+      }
+
+      ol {
+        font-size: 18px;
+        line-height: 38px;
+      }
+
+      ul {
+        margin-left: 20px;
+      }
+
+      @media (max-width: 768px) {
         header {
-            background-color: #064e3b;
-            color: white;
-            display: flex;
-            align-items: center;
-            padding: 15px 20px;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        header h1 {
-            font-size: 32px;
-            font-weight: 900;
+          justify-content: center;
+          text-align: center;
         }
 
         .tagline {
-            font-size: 18px;
-            font-weight: 600;
-            margin-left: auto;
+          margin-left: 0;
+          width: 100%;
         }
 
-        .logo {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            overflow: hidden;
-            flex-shrink: 0;
-        }
-
-        .logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* BACK BUTTON */
-        #backbutton {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: #064e3b;
-            color: white;
-            border: 2px solid white;
-            padding: 6px 12px;
-            border-radius: 8px;
-            font-size: 15px;
-            cursor: pointer;
-            transition: all 0.25s ease;
-        }
-
-        #backbutton:hover {
-            background: white;
-            color: #064e3b;
-            transform: scale(1.08);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-        }
-
-        /* MAIN CONTENT */
         main {
-            padding: 30px 50px;
-            color: #27302f;
+          padding: 20px;
         }
-
-        main h2 {
-            text-align: center;
-            font-size: 30px;
-            margin-bottom: 25px;
-        }
-
-        ol {
-            font-size: 18px;
-            line-height: 38px;
-        }
-
-        ul {
-            margin-left: 20px;
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            header {
-                justify-content: center;
-                text-align: center;
-            }
-
-            .tagline {
-                margin-left: 0;
-                width: 100%;
-            }
-
-            main {
-                padding: 20px;
-            }
-        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
+    <header>
+      <!-- Back Button -->
+      <button id="backbutton" onclick="history.back()">⬅ Back</button>
 
-<header>
-    <button id="backbutton" onclick="history.back()">⬅ Back</button>
+      <!-- Logo -->
+      <div class="logo">
+        <img
+          src="https://media.licdn.com/dms/image/sync/v2/D5627AQG9-avGDBnGAw/articleshare-shrink_800/B56ZoGdwNbJQAI-/0/1761045054886?e=2147483647&v=beta&t=TlpU_D2ThTvHni6galiIBN9u5nN91qgyeQnp1uTMZG8"
+        />
+      </div>
 
-    <div class="logo">
-        <img src="https://media.licdn.com/dms/image/sync/v2/D5627AQG9-avGDBnGAw/articleshare-shrink_800/B56ZoGdwNbJQAI-/0/1761045054886?e=2147483647&v=beta&t=TlpU_D2ThTvHni6galiIBN9u5nN91qgyeQnp1uTMZG8">
-    </div>
+      <!-- Title -->
+      <h1>TruthCheck AI</h1>
 
-    <h1>TruthbyAI</h1>
+      <!-- Tagline -->
+      <div class="tagline">Ensuring Trust in AI Generated Information.</div>
+    </header>
 
-    <div class="tagline">Ensuring Trust in AI Generated Information.</div>
-</header>
+    <main>
+      <h2>About This</h2>
 
-<main>
-    <h2>About This</h2>
-
-    <ol>
+      <ol>
         <li>
-            TruthbyAI verifies AI responses by checking them with reliable sources and highlights whether the information is <b>Authentic</b>, <b>Partially True</b>, or <b>Incorrect</b>.
+          TruthCheck AI verifies AI responses by checking them with reliable
+          sources and highlights whether the information is <b>Authentic</b>,
+          <b>Partially True</b>, or <b>Incorrect</b>.
         </li>
 
         <li>
-            <b>Working:</b> Users can input text or images. The system compares the content with trusted databases and fact-checking resources to ensure the accuracy of AI-generated information.
+          <b>Working:</b> Users can input text or images. The system compares
+          the content with trusted databases and fact-checking resources to
+          ensure the accuracy of AI-generated information.
         </li>
 
         <li>
-            Technologies used include <b>Java</b> for backend, <b>HTML & CSS</b> for frontend, and <b>GitHub</b> for version control.
+          Technologies used include <b>Java</b> for backend,
+          <b>HTML & CSS</b> for frontend, and <b>GitHub</b> for version control.
         </li>
 
         <li>
-            <b>Team Members:</b>
-            <ul>
-                <li>Shivam Kalra — Team Leader & Backend Developer</li>
-                <li>Sajag Mishra — Frontend Developer</li>
-                <li>Ananya Vatsa — Designer</li>
-                <li>Tanishq Kalra — Frontend Developer</li>
-            </ul>
+          <b>Team Members:</b>
+          <ul>
+            <li>Shivam Kalra — Team Leader & Backend Developer</li>
+            <li>Sajag Mishra — Frontend Developer</li>
+            <li>Ananya Vatsa — Designer</li>
+            <li>Tanishq Kalra — Frontend Developer</li>
+          </ul>
         </li>
-    </ol>
-</main>
-
-</body>
+      </ol>
+    </main>
+  </body>
 </html>
